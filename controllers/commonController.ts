@@ -4,6 +4,7 @@ import * as bcrypt from "bcrypt"
 import User from "../models/user.model";
 import { errorResponse, successResponse } from "../handlers/responseHandler";
 
+// COMMON APIs:
 const registerUser = async (request:Request,response:Response) => {
     try {
         const {
