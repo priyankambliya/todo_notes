@@ -6,6 +6,6 @@ import {
 
 const router = express()
 
-router.get('/register',registerUser)
+router.post('/register',registerUser)
 
 export default router

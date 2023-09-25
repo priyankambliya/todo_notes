@@ -13,7 +13,9 @@ const registerUser = async (request:Request,response:Response) => {
         } = request.body
     
         const hasedPassword = await bcrypt.hash(password,10)
-    
+        
+        const isAlreadyExist = await User.findOne({email})
+        if(isAlreadyExist) throw "user already exist with this email.."
         await User.create({
             username,
             email,
